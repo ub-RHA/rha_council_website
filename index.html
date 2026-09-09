@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Residence Hall Association at the University at Buffalo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="./image-slot.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; color: #101827; font-family: "Inter", ui-sans-serif, system-ui, sans-serif; letter-spacing: -.011em; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: #005bbb; text-decoration: none; }
+  a:hover { color: #002f56; }
+  @keyframes rhaRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes rhaSweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes rhaTwinkle { 0%, 100% { opacity: .5; transform: rotate(0deg) scale(.9); } 50% { opacity: 1; transform: rotate(18deg) scale(1.12); } }
+</style>
+</helmet>
+
+<nav style="position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: rgba(255,255,255,.88); borderBottom: 1px solid rgba(220,229,239,.9)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto; min-height: 76px; padding: 12px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -.03em; color: #101827">
+      <span style="width: 38px; height: 38px; border-radius: 12px; background: #005bbb; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 15px; box-shadow: 0 7px 18px rgba(0,91,187,.22)">R</span>
+      <span>UB RHA</span>
+    </a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px 26px; font-size: 14px; font-weight: 500">
+      <a href="#about" style="color: #475467" style-hover="color: #005bbb">About</a>
+      <a href="#programming" style="color: #475467" style-hover="color: #005bbb">Programming</a>
+      <a href="#senate" style="color: #475467" style-hover="color: #005bbb">Senate</a>
+      <a href="#council" style="color: #475467" style-hover="color: #005bbb">Eboard</a>
+    </div>
+    <a href="#calendar" style="padding: 11px 17px; border-radius: 999px; background: #005bbb; color: #fff; font-weight: 600; font-size: 14px" style-hover="background: #002f56; color: #fff">What's happening</a>
+  </div>
+</nav>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><rect width="240" height="240" fill="#005bbb"/><text x="120" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffc72c">RHA</text></svg></template>
+
+<main id="top" style="display: block">
+
+<section data-screen-label="Hero" style="position: relative; overflow: hidden; background: radial-gradient(circle at 85% 22%, rgba(0,91,187,.13), transparent 27%), linear-gradient(180deg, #fff 0%, #f8fbff 100%)">
+  <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden">
+    <div style="position: absolute; right: -12%; top: -14%; width: clamp(420px, 48vw, 760px); aspect-ratio: 1; border-radius: 46% 54% 38% 62% / 55% 42% 58% 45%; background: linear-gradient(140deg, rgba(0,91,187,.20), rgba(104,170,241,.10)); filter: blur(2px); transform: {{ blobA }}; transition: transform .35s cubic-bezier(.2,.7,.2,1)"></div>
+    <div style="position: absolute; left: -14%; bottom: -20%; width: clamp(340px, 38vw, 600px); aspect-ratio: 1; border-radius: 60% 40% 55% 45% / 42% 58% 40% 60%; background: radial-gradient(circle at 35% 35%, rgba(0,91,187,.16), rgba(0,91,187,0) 68%); transform: {{ blobB }}; transition: transform .35s cubic-bezier(.2,.7,.2,1)"></div>
+    <div style="position: absolute; right: 14%; bottom: 12%; width: clamp(180px, 20vw, 300px); aspect-ratio: 1; border: clamp(18px, 2.4vw, 34px) solid rgba(0,91,187,.10); border-radius: 50%; transform: {{ ringA }}; transition: transform .35s cubic-bezier(.2,.7,.2,1)"></div>
+    <div style="position: absolute; right: 4%; bottom: 26%; width: clamp(90px, 10vw, 150px); aspect-ratio: 1; border-radius: 34px; background: rgba(0,47,86,.05); transform: {{ squareA }}; transition: transform .35s cubic-bezier(.2,.7,.2,1)"></div>
+  </div>
+  <div style="position: relative; width: min(1180px, calc(100% - 48px)); margin: 0 auto; display: flex; flex-direction: column; gap: clamp(44px, 5vw, 80px); padding: clamp(40px, 4vw, 56px) 0 clamp(64px, 7vw, 104px)">
+    <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 30px); padding-top: clamp(8px, 1.4vw, 20px)">
+      <div style="position: relative; container-type: inline-size">
+        <span style="position: absolute; right: -4px; top: -30px; color: #ffc72c; font-size: 34px; line-height: 1; animation: rhaTwinkle 3.4s ease-in-out infinite">✦</span>
+        <div style="display: inline-flex; align-items: center; gap: 9px; color: #005bbb; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: clamp(10px, 1.4vw, 18px)">
+          <span style="width: 8px; height: 8px; background: #ffc72c; border-radius: 50%"></span>
+          <span>University at Buffalo · Residence Life</span>
+        </div>
+        <h1 style="font-family: 'Inter Tight', sans-serif; font-size: 30.25cqw; line-height: .84; letter-spacing: -.045em; font-weight: 700; color: #005bbb; margin: 0; white-space: nowrap; opacity: 0; animation: rhaRise .75s cubic-bezier(.2,.7,.2,1) .05s forwards">UB RHA</h1>
+      </div>
+      <div style="position: relative; width: 100%; aspect-ratio: 16 / 7; overflow: hidden; border-radius: 20px; background: #eaf2fb; opacity: 0; animation: rhaRise .8s cubic-bezier(.2,.7,.2,1) .2s forwards">
+        <img src="./web/team-group.jpg" alt="UB RHA executive board on campus" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 34%; display: block">
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: clamp(16px, 3vw, 48px); opacity: 0; animation: rhaRise .8s cubic-bezier(.2,.7,.2,1) .35s forwards">
+        <div style="font-family: 'Inter Tight', sans-serif; font-size: clamp(16px, 1.6vw, 23px); line-height: 1.14; font-weight: 600; letter-spacing: -.03em; color: #002f56">Turning residents<br>into leaders</div>
+        <a href="#calendar" style="justify-self: center; display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 999px; background: #005bbb; color: #fff; font-size: 15px; font-weight: 600; box-shadow: 0 12px 24px rgba(0,91,187,.20); transition: background .2s, transform .2s" style-hover="background: #002f56; color: #fff; transform: translateY(-2px)">See upcoming events ↓</a>
+        <div style="font-family: 'Inter Tight', sans-serif; font-size: clamp(16px, 1.6vw, 23px); line-height: 1.14; font-weight: 600; letter-spacing: -.03em; color: #002f56; text-align: right">and halls<br>into homes</div>
+      </div>
+    </div>
+    <div style="position: relative; min-height: 470px">
+      <span style="position: absolute; right: 0; top: 16px; z-index: 2; color: #ffc72c; font-size: 44px; font-weight: 700; transform: rotate(12deg)">✦</span>
+      <span style="position: absolute; left: 0; bottom: 55px; z-index: 2; color: #005bbb; font-size: 34px; font-weight: 700">✳</span>
+      <div style="position: absolute; inset: 30px 20px 30px 35px; transform: rotate(3deg); perspective: 1600px">
+        <div onClick="{{ toggleHeroFlip }}" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transition: transform 1.5s cubic-bezier(.3,.75,.25,1); transform: {{ heroFlip }}" style-hover="transform: rotateY(180deg)">
+          <div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #05294a url('web/card-campus-aerial.jpg') center 40%/cover no-repeat; border-radius: 34px; box-shadow: 0 18px 50px rgba(0,47,86,.14); overflow: hidden; padding: 34px; color: #fff; filter: saturate(1.08) contrast(1.06) brightness(1.06)">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,26,49,.45) 0%, rgba(4,26,49,.18) 22%, rgba(4,26,49,.10) 45%, rgba(0,40,75,.72) 74%, rgba(0,40,75,.94) 100%)"></div>
+            <div style="position: absolute; width: 210px; height: 210px; border: 34px solid rgba(255,255,255,.12); border-radius: 50%; right: -70px; top: -65px"></div>
+            <div style="position: absolute; width: 110px; height: 110px; background: #ffc72c; border-radius: 24px; left: -58px; bottom: -58px; transform: rotate(20deg)"></div>
+            <div style="position: relative; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 10px rgba(3,20,38,.6)">Residence Hall Association</div>
+            <h2 style="position: relative; font-family: 'Inter Tight', sans-serif; font-size: 54px; line-height: .92; letter-spacing: -.045em; font-weight: 700; margin: 88px 0 18px; max-width: 380px; text-shadow: 0 2px 18px rgba(3,20,38,.55)">Your hall.<br>Your voice.<br>Your RHA.</h2>
+            <p style="position: relative; max-width: 300px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.88); margin: 0; text-shadow: 0 1px 12px rgba(3,20,38,.6); text-wrap: pretty">Making residents into leaders and halls into homes for over 30 years.</p>
+            <span style="position: absolute; right: 26px; bottom: 26px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.78)">Hover to flip ⟳</span>
+          </div>
+          <div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(180deg); background: #002f56; border-radius: 34px; box-shadow: 0 18px 50px rgba(0,47,86,.14); overflow: hidden; padding: 34px 32px; color: #fff; display: flex; flex-direction: column; justify-content: center; gap: 16px">
+            <div style="position: absolute; width: 190px; height: 190px; border: 30px solid rgba(255,255,255,.08); border-radius: 50%; left: -80px; top: -70px"></div>
+            <div style="position: absolute; width: 96px; height: 96px; background: #ffc72c; border-radius: 22px; right: -46px; bottom: -46px; transform: rotate(18deg)"></div>
+            <div style="position: relative; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #ffc72c">What is RHA?</div>
+            <div style="position: relative; display: flex; flex-direction: column; gap: 16px">
+              <p style="font-family: 'Inter Tight', sans-serif; font-size: 20px; line-height: 1.32; letter-spacing: -.02em; font-weight: 600; color: #fff; margin: 0; max-width: 360px; text-wrap: pretty">To represent all students living on campus and build inclusive, engaged communities.</p>
+              <div style="width: 46px; height: 3px; background: #ffc72c; border-radius: 3px"></div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px">
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #ffc72c; margin-bottom: 5px">Advocacy</div>
+                  <p style="font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.8); margin: 0; text-wrap: pretty">Ensuring the voices of all residents are heard and their safety and well-being prioritized.</p>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #ffc72c; margin-bottom: 5px">Inclusion</div>
+                  <p style="font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.8); margin: 0; text-wrap: pretty">Welcoming residents of all backgrounds and identities, with equitable access to campus life.</p>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #ffc72c; margin-bottom: 5px">Community</div>
+                  <p style="font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.8); margin: 0; text-wrap: pretty">People who learn and grow from each other and share a sense of care and belonging.</p>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #ffc72c; margin-bottom: 5px">Leadership Development</div>
+                  <p style="font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.8); margin: 0; text-wrap: pretty">Experiences that build on residents' strengths to develop them as leaders.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-screen-label="About" style="padding: clamp(64px, 8vw, 110px) 0">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 44px; flex-wrap: wrap">
+      <div>
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Start here</div>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 0">Everything RHA,<br>in one place.</h2>
+      </div>
+      <p style="max-width: 430px; color: #667085; margin: 0">Whether you want to find an event, request a resource, learn about spirit points, or meet your council, you're in the right spot.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 18px">
+      <a href="#points" style="border: 1px solid #005bbb; border-radius: 24px; padding: 28px 28px 66px; min-height: 230px; background: #005bbb; color: #fff; position: relative; overflow: hidden; display: block; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-5px); box-shadow: 0 18px 50px rgba(0,47,86,.16); color: #fff">
+        <span style="font-size: 12px; font-weight: 700; opacity: .6">01</span>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 27px; letter-spacing: -.03em; font-weight: 600; margin: 46px 0 10px">Spirit Points</h3>
+        <p style="color: rgba(255,255,255,.75); margin: 0">See the competition, track the points, and rep your hall.</p>
+        <span style="position: absolute; right: 24px; bottom: 22px; font-size: 24px">↗</span>
+      </a>
+      <a href="#council" style="border: 1px solid #dce5ef; border-radius: 24px; padding: 28px 28px 66px; min-height: 230px; background: #fff; color: #101827; position: relative; overflow: hidden; display: block; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-5px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+        <span style="font-size: 12px; font-weight: 700; color: #98a2b3">02</span>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 27px; letter-spacing: -.03em; font-weight: 600; margin: 46px 0 10px">Meet the Eboard</h3>
+        <p style="color: #667085; margin: 0">Names, roles, photos, and contact info for your RHA leaders.</p>
+        <span style="position: absolute; right: 24px; bottom: 22px; font-size: 24px; color: #005bbb">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="programming" data-screen-label="Programming" style="padding: 0 0 clamp(64px, 8vw, 110px)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 44px; flex-wrap: wrap">
+      <div>
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Programming</div>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 0">Stuff worth<br>showing up for.</h2>
+      </div>
+      <p style="max-width: 430px; color: #667085; margin: 0">Events made for residents — from big traditions to the small things that make a hall feel alive.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 18px">
+      <a href="https://drive.google.com/drive/folders/1IuE3cpozunIpUaL6EKOx4eLld8p_dCLJ?usp=share_link" target="_blank" rel="noopener noreferrer" style="border: 1px solid #dce5ef; border-radius: 24px; padding: 28px 28px 66px; min-height: 230px; background: #fff; color: #101827; position: relative; overflow: hidden; display: block; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-5px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+        <span style="font-size: 12px; font-weight: 700; color: #98a2b3">A</span>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 27px; letter-spacing: -.03em; font-weight: 600; margin: 46px 0 10px">Past Events</h3>
+        <p style="color: #667085; margin: 0">Photos, recaps, and highlights from past programs 📸</p>
+        <span style="position: absolute; right: 24px; bottom: 22px; font-size: 24px; color: #005bbb">↗</span>
+      </a>
+      <a href="https://docs.google.com/spreadsheets/d/1u0ckSz8lanCjphIGSaixyANLnzahB43WyE2EBKWlayU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="border: 1px solid #005bbb; border-radius: 24px; padding: 28px 28px 66px; min-height: 230px; background: #005bbb; color: #fff; position: relative; overflow: hidden; display: block; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-5px); box-shadow: 0 18px 50px rgba(0,47,86,.16); color: #fff">
+        <span style="font-size: 12px; font-weight: 700; opacity: .6">B</span>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 27px; letter-spacing: -.03em; font-weight: 600; margin: 46px 0 10px">Looking for programming partners?</h3>
+        <p style="color: rgba(255,255,255,.75); margin: 0">Here is a master sheet of collaborative resources 🤝</p>
+        <span style="position: absolute; right: 24px; bottom: 22px; font-size: 24px">↗</span>
+      </a>
+      <a href="#calendar" style="border: 1px solid #dce5ef; border-radius: 24px; padding: 28px 28px 66px; min-height: 230px; background: #fff; color: #101827; position: relative; overflow: hidden; display: block; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-5px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+        <span style="font-size: 12px; font-weight: 700; color: #98a2b3">C</span>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 27px; letter-spacing: -.03em; font-weight: 600; margin: 46px 0 10px">Event Calendar</h3>
+        <p style="color: #667085; margin: 0">Find out what your fellow councils are planning to better schedule your events 🗓️</p>
+        <span style="position: absolute; right: 24px; bottom: 22px; font-size: 24px; color: #005bbb">↗</span>
+      </a>
+    </div>
+    <div id="finance" data-screen-label="Finances" style="margin-top: 18px; background: #005bbb; color: #fff; border-radius: 36px; padding: clamp(28px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; align-items: center">
+      <div>
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #ffc72c">Finances</div>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(40px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 14px">Need programming<br>supplies? 👀</h2>
+        <p style="color: rgba(255,255,255,.72); max-width: 560px; margin: 0">Browse our RHA inventory catalog to borrow programming supplies from other councils before buying!</p>
+      </div>
+      <a href="https://ub-rha.github.io/rha-inventory-/" style="border-radius: 999px; padding: 15px 22px; font-weight: 600; background: #fff; color: #002f56; white-space: nowrap; transition: transform .2s" style-hover="transform: translateY(-2px); color: #005bbb">Browse inventory →</a>
+    </div>
+  </div>
+</section>
+
+<section id="points" data-screen-label="Spirit points" style="padding: 0 0 clamp(64px, 8vw, 110px)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="background: #005bbb; color: #fff; border-radius: 36px; padding: clamp(28px, 4vw, 56px); position: relative; overflow: hidden">
+      <div style="position: absolute; right: -90px; top: -110px; width: 330px; height: 330px; border: 55px solid rgba(255,255,255,.1); border-radius: 50%"></div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden; opacity: .6; font-size: 26px">
+        <span style="position: absolute; left: 5%; top: 6%; transform: rotate(-14deg)">🎉</span>
+        <span style="position: absolute; left: 12%; top: 58%; font-size: 20px; transform: rotate(10deg)">✨</span>
+        <span style="position: absolute; left: 18%; top: 34%; width: 12px; height: 18px; background: #ffc72c; transform: rotate(24deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 28%; top: 16%; font-size: 16px; color: #ffc72c">●</span>
+        <span style="position: absolute; left: 36%; top: 78%; font-size: 18px; transform: rotate(-8deg)">🎊</span>
+        <span style="position: absolute; left: 44%; top: 30%; width: 10px; height: 16px; background: #fff; transform: rotate(-30deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 50%; top: 8%; font-size: 20px; transform: rotate(18deg)">🎈</span>
+        <span style="position: absolute; left: 56%; top: 55%; width: 14px; height: 20px; background: #ffc72c; transform: rotate(-16deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 62%; top: 14%; font-size: 15px; color: #fff">▲</span>
+        <span style="position: absolute; left: 66%; top: 68%; font-size: 22px; transform: rotate(16deg)">🎉</span>
+        <span style="position: absolute; left: 74%; top: 40%; width: 11px; height: 17px; background: #fff; transform: rotate(35deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 80%; top: 22%; font-size: 14px; color: #ffc72c">■</span>
+        <span style="position: absolute; left: 86%; top: 58%; font-size: 20px; transform: rotate(-20deg)">✨</span>
+        <span style="position: absolute; left: 92%; top: 8%; font-size: 19px; transform: rotate(12deg)">🎊</span>
+        <span style="position: absolute; left: 22%; top: 45%; font-size: 13px; color: #fff">●</span>
+        <span style="position: absolute; left: 8%; top: 80%; width: 12px; height: 18px; background: #fff; transform: rotate(-22deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 48%; top: 90%; font-size: 20px; transform: rotate(-10deg)">🎉</span>
+        <span style="position: absolute; left: 52%; top: 48%; font-size: 15px; color: #ffc72c; transform: rotate(24deg)">▲</span>
+        <span style="position: absolute; left: 70%; top: 88%; width: 13px; height: 19px; background: #ffc72c; transform: rotate(18deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 76%; top: 82%; font-size: 16px; color: #fff">●</span>
+        <span style="position: absolute; left: 90%; top: 82%; font-size: 18px; transform: rotate(-14deg)">🎈</span>
+        <span style="position: absolute; left: 10%; top: 92%; font-size: 14px; color: #ffc72c">■</span>
+        <span style="position: absolute; left: 32%; top: 60%; width: 10px; height: 15px; background: #ffc72c; transform: rotate(-40deg); border-radius: 2px"></span>
+        <span style="position: absolute; left: 96%; top: 45%; font-size: 20px; transform: rotate(20deg)">✨</span>
+        <span style="position: absolute; left: 3%; top: 30%; font-size: 18px; transform: rotate(8deg)">🎊</span>
+        <span style="position: absolute; left: 16%; top: 12%; font-size: 16px; transform: rotate(-16deg)">✨</span>
+        <span style="position: absolute; left: 24%; top: 90%; font-size: 20px; transform: rotate(14deg)">🎉</span>
+        <span style="position: absolute; left: 38%; top: 48%; font-size: 17px; transform: rotate(-24deg)">🎈</span>
+        <span style="position: absolute; left: 46%; top: 68%; font-size: 15px; transform: rotate(10deg)">✨</span>
+        <span style="position: absolute; left: 58%; top: 82%; font-size: 19px; transform: rotate(-12deg)">🎊</span>
+        <span style="position: absolute; left: 64%; top: 30%; font-size: 18px; transform: rotate(22deg)">🎉</span>
+        <span style="position: absolute; left: 72%; top: 6%; font-size: 16px; transform: rotate(-8deg)">✨</span>
+        <span style="position: absolute; left: 84%; top: 72%; font-size: 20px; transform: rotate(18deg)">🎈</span>
+        <span style="position: absolute; left: 94%; top: 20%; font-size: 17px; transform: rotate(-18deg)">🎊</span>
+      </div>
+      <div style="position: relative">
+        <div style="text-align: center; max-width: 620px; margin: 0 auto 40px">
+          <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #ffc72c">Spirit points</div>
+          <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(42px, 4.6vw, 66px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 18px">Who's on top?</h2>
+          <p style="color: rgba(255,255,255,.78); margin: 0 0 26px">Stay on top of your council's spirit points and race to the top of the leaderboard!</p>
+          <a href="#calendar" style="display: inline-block; border-radius: 999px; padding: 14px 20px; font-weight: 600; background: #fff; color: #005bbb; transition: transform .2s" style-hover="transform: translateY(-2px); color: #002f56">See how to get spirit points →</a>
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: center; gap: 4px; max-width: 560px; margin: 0 auto 36px">
+          <sc-for list="{{ podium }}" as="p" hint-placeholder-count="3">
+            <div style="flex: 1; max-width: {{ p.maxW }}; text-align: center; z-index: {{ p.z }}; transition: transform .3s ease" style-hover="transform: {{ p.lift }}">
+              <sc-if value="{{ p.trophy }}" hint-placeholder-val="{{ false }}"><span style="display: block; font-size: 26px; margin-bottom: 6px">🏆</span></sc-if>
+              <div style="width: {{ p.medalSize }}; height: {{ p.medalSize }}; margin: 0 auto 10px; border-radius: 50%; background: {{ p.medalBg }}; display: grid; place-items: center; color: {{ p.medalColor }}; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: {{ p.medalFont }}; box-shadow: 0 6px 14px rgba(0,20,45,.18)">{{ p.rank }}</div>
+              <div style="font-weight: {{ p.nameWeight }}; font-size: {{ p.nameSize }}; margin-bottom: 2px">{{ p.name }}</div>
+              <div style="color: {{ p.metaColor }}; font-size: 13px; margin-bottom: 12px">{{ p.pts }}</div>
+              <div style="height: {{ p.barH }}; border-radius: 10px 10px 0 0; background: {{ p.barBg }}; box-shadow: {{ p.barShadow }}; display: flex; align-items: flex-start; justify-content: center; padding-top: {{ p.pad }}"><span style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: {{ p.barNumSize }}; color: {{ p.barNumColor }}">{{ p.rank }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px 32px; max-width: 640px; margin: 0 auto">
+          <sc-for list="{{ standings }}" as="row" hint-placeholder-count="11">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.18)">
+              <strong style="font-size: 16px; font-weight: 600">{{ row.name }}</strong>
+              <span style="color: rgba(255,255,255,.8); white-space: nowrap">{{ row.pts }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" data-screen-label="Calendar" style="padding: 0 0 clamp(64px, 8vw, 110px)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="margin-bottom: 44px">
+      <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Don't miss it</div>
+      <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 10px">What's happening on campus?</h2>
+      <p style="max-width: none; color: #667085; margin: 0; text-align: left; white-space: nowrap">Don't miss out on anything! Check out our upcoming RHA events! ⭐️</p>
+    </div>
+    <sc-if value="{{ activeEvent }}">
+      <div onClick="{{ closeEvent }}" style="position: fixed; inset: 0; z-index: 50; background: rgba(6,20,38,.55); display: flex; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(2px)">
+        <div onClick="{{ stopClick }}" style="width: min(460px, 100%); max-height: min(86vh, 760px); overflow: auto; background: #fff; border-radius: 26px; box-shadow: 0 30px 70px rgba(0,20,40,.35)">
+          <div style="position: relative; height: min(42vh, 340px); background: #eaf2fb">
+            <sc-if value="{{ activeFlyer }}" hint-placeholder-val="{{ false }}">
+              <div role="img" aria-label="Event flyer" style="width: 100%; height: 100%; background-image: {{ activeFlyerBg }}; background-size: contain; background-repeat: no-repeat; background-position: center"></div>
+            </sc-if>
+            <sc-if value="{{ activeNoFlyer }}" hint-placeholder-val="{{ true }}">
+              <image-slot id="{{ activeEvent.slotId }}" data-slot-id="{{ activeEvent.slotId }}" shape="rect" placeholder="Drop the event flyer/poster"></image-slot>
+            </sc-if>
+            <button type="button" onClick="{{ closeEvent }}" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(10,20,32,.55); color: #fff; font-size: 16px; cursor: pointer; display: grid; place-items: center">✕</button>
+          </div>
+          <div style="padding: 22px 24px 26px">
+            <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 7px 11px; background: #eef6ff; color: #005bbb; border-radius: 999px">{{ activeEvent.tag }}</span>
+            <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 26px; letter-spacing: -.03em; font-weight: 600; margin: 14px 0 6px">{{ activeEvent.title }}</h3>
+            <p style="margin: 0 0 12px; color: #667085; font-size: 14px">{{ activeEvent.meta }}</p>
+            <p style="margin: 0; color: #475467">{{ activeEvent.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <div style="display: flex; flex-direction: column; gap: clamp(28px, 3.4vw, 46px)">
+      <div style="position: relative; border: 1px solid #cfe0f2; border-radius: 24px; overflow: hidden; background: #eaf2fb">
+        <div style="position: relative; padding: clamp(22px, 2.6vw, 32px)">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+          <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">{{ monthLabel }}</div>
+          <div style="display: flex; gap: 6px">
+            <button type="button" onClick="{{ prevMonth }}" aria-label="Previous month" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid #c3d8ee; background: #fff; color: #005bbb; cursor: pointer; display: grid; place-items: center; font-size: 13px">‹</button>
+            <button type="button" onClick="{{ nextMonth }}" aria-label="Next month" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid #c3d8ee; background: #fff; color: #005bbb; cursor: pointer; display: grid; place-items: center; font-size: 13px">›</button>
+          </div>
+        </div>
+        <h3 style="position: relative; font-family: 'Inter Tight', sans-serif; font-size: 28px; letter-spacing: -.03em; font-weight: 600; margin: 10px 0 6px">Plan your month.</h3>
+        <p style="position: relative; color: #667085; margin: 0; font-size: 14px">Tap a council label on any date to see that event's flyer and details.</p>
+        <div style="position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 26px">
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">M</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">T</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">W</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">T</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">F</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">S</span>
+          <span style="min-height: 40px; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 700; color: #98a2b3">S</span>
+          <sc-for list="{{ calendarCells }}" as="cell" hint-placeholder-count="35">
+            <div style="min-height: clamp(62px, 6vw, 96px); border-radius: 14px; padding: 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; background: {{ cell.bg }}">
+              <span style="width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; box-sizing: border-box; border: {{ cell.dayRing }}; font-size: clamp(13px, 1.2vw, 16px); font-weight: {{ cell.weight }}; color: {{ cell.color }}">{{ cell.day }}</span>
+              <sc-for list="{{ cell.chips }}" as="chip" hint-placeholder-count="0">
+                <div onClick="{{ chip.open }}" title="{{ chip.label }}" style="cursor: pointer; width: 100%; padding: 3px 6px; border-radius: 7px; background: {{ chip.bg }}; color: #fff; font-size: 10px; font-weight: 700; line-height: 1.2; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: opacity .15s" style-hover="opacity: .82">{{ chip.label }}</div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -.035em; font-weight: 700; margin: 0 0 22px">Upcoming events</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 22px">
+          <sc-for list="{{ monthEvents }}" as="ev" hint-placeholder-count="3">
+            <div onClick="{{ ev.open }}" style="cursor: pointer; border: 1px solid #dce5ef; border-radius: 20px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s" style-hover="transform: translateY(-3px); box-shadow: 0 16px 34px rgba(0,47,86,.10)">
+              <div style="position: relative; width: 100%; height: clamp(180px, 18vw, 240px); background: {{ ev.cardBg }}">
+                <sc-if value="{{ ev.flyer }}" hint-placeholder-val="{{ false }}">
+                  <div role="img" aria-label="Event flyer" style="width: 100%; height: 100%; background-image: {{ ev.flyerBg }}; background-size: cover; background-position: center"></div>
+                </sc-if>
+                <sc-if value="{{ ev.noFlyer }}" hint-placeholder-val="{{ true }}">
+                  <image-slot id="{{ ev.slotId }}" data-slot-id="{{ ev.slotId }}" shape="rect" placeholder="Drop the event flyer"></image-slot>
+                </sc-if>
+                <span style="position: absolute; left: 14px; top: 14px; font-size: 12px; font-weight: 600; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,.92); color: #005bbb">{{ ev.tag }} · {{ ev.dateLabel }}</span>
+              </div>
+              <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+                <div style="font-family: 'Inter Tight', sans-serif; font-size: 21px; line-height: 1.15; letter-spacing: -.03em; font-weight: 700; color: #002f56">{{ ev.title }}</div>
+                <p style="margin: 0; color: #667085; font-size: 14px">{{ ev.meta }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ noEvents }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px dashed #cfdcea; border-radius: 20px; padding: 40px 26px; text-align: center; color: #98a2b3">No events this month yet.</div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards" data-screen-label="Awards" style="padding: 0 0 clamp(64px, 8vw, 110px)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto; position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(32px, 4vw, 56px); align-items: center">
+    <div style="min-height: 420px; border-radius: 34px; background: linear-gradient(135deg, #005bbb, #68aaf1); position: relative; overflow: hidden">
+      <span style="position: absolute; left: -6px; bottom: -22px; font-family: 'Inter Tight', sans-serif; font-size: clamp(88px, 13vw, 150px); font-weight: 700; letter-spacing: -.08em; color: rgba(255,255,255,.16)">RHA</span>
+      <div style="position: absolute; right: 35px; top: 35px; background: #ffc72c; color: #101827; padding: 18px; border-radius: 50%; font-weight: 700; transform: rotate(9deg)">+ community</div>
+    </div>
+    <div>
+      <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Association awards</div>
+      <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 18px">Celebrating the people who make campus better.</h2>
+      <p style="color: #667085; max-width: 550px; margin: 0 0 24px">Showcase award photos, recognize outstanding residents, and keep a searchable archive of past winners.</p>
+      <div style="display: grid; gap: 2px">
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid #dce5ef"><strong style="font-weight: 600">Resident Leader of the Year</strong><span style="color: #667085">2025 · Name</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid #dce5ef"><strong style="font-weight: 600">Program of the Year</strong><span style="color: #667085">2025 · Hall Name</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid #dce5ef"><strong style="font-weight: 600">Community Builder</strong><span style="color: #667085">2025 · Name</span></div>
+      </div>
+    </div>
+    <div style="position: absolute; inset: 0; z-index: 2; border-radius: 24px; background: rgba(255,255,255,.72); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); display: grid; place-items: center; padding: 24px">
+      <div style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #005bbb; color: #fff; font-family: 'Inter Tight', sans-serif; font-size: clamp(18px, 2vw, 26px); font-weight: 600; letter-spacing: -.02em; box-shadow: 0 14px 40px rgba(0,47,86,.22)">More info coming soon!</div>
+    </div>
+  </div>
+</section>
+
+<section id="senate" data-screen-label="Senate" style="padding: clamp(64px, 8vw, 110px) 0; background: #f7fafc">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 44px; flex-wrap: wrap">
+      <div>
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Senate</div>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 0">Your voice,<br>in the room.</h2>
+      </div>
+    </div>
+    <div style="position: relative">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px">
+        <a href="#senate" style="display: block; padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: #fff; border: 1px solid #dce5ef; min-height: 190px; color: #101827; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+          <div style="font-size: 12px; letter-spacing: .14em; font-weight: 700; color: #005bbb">01</div>
+          <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 29px; letter-spacing: -.035em; font-weight: 600; margin: 34px 0 8px">Meeting Minutes ↗</h3>
+          <p style="color: #667085; margin: 0; max-width: 420px">Link your Google Drive folder or meeting notes here.</p>
+        </a>
+        <a href="#senate" style="display: block; padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: #fff; border: 1px solid #dce5ef; min-height: 190px; color: #101827; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+          <div style="font-size: 12px; letter-spacing: .14em; font-weight: 700; color: #005bbb">02</div>
+          <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 29px; letter-spacing: -.035em; font-weight: 600; margin: 34px 0 8px">This Week's Theme ↗</h3>
+          <p style="color: #667085; margin: 0; max-width: 420px">A quick weekly update residents can actually read.</p>
+        </a>
+        <a href="#senate" style="display: block; padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: #fff; border: 1px solid #dce5ef; min-height: 190px; color: #101827; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+          <div style="font-size: 12px; letter-spacing: .14em; font-weight: 700; color: #005bbb">03</div>
+          <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 29px; letter-spacing: -.035em; font-weight: 600; margin: 34px 0 8px">Request to Present ↗</h3>
+          <p style="color: #667085; margin: 0; max-width: 420px">Connect a Google Form so residents can request time at senate.</p>
+        </a>
+        <a id="resources" href="#resources" style="display: block; padding: clamp(24px, 3vw, 34px); border-radius: 24px; background: #fff; border: 1px solid #dce5ef; min-height: 190px; color: #101827; transition: transform .25s, box-shadow .25s" style-hover="transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,47,86,.10); color: #101827">
+          <div style="font-size: 12px; letter-spacing: .14em; font-weight: 700; color: #005bbb">04</div>
+          <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 29px; letter-spacing: -.035em; font-weight: 600; margin: 34px 0 8px">Resources ↗</h3>
+          <p style="color: #667085; margin: 0; max-width: 420px">Centralize forms, guides, policies, and other useful links.</p>
+        </a>
+      </div>
+      <div style="position: absolute; inset: 0; z-index: 2; border-radius: 24px; background: rgba(247,250,252,.72); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); display: grid; place-items: center; padding: 24px">
+        <div style="text-align: center">
+          <div style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: #005bbb; color: #fff; font-family: 'Inter Tight', sans-serif; font-size: clamp(18px, 2vw, 26px); font-weight: 600; letter-spacing: -.02em; box-shadow: 0 14px 40px rgba(0,47,86,.22)">More info coming soon!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="council" data-screen-label="Eboard" style="padding: 0 0 clamp(64px, 8vw, 110px)">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto">
+    <div style="text-align: center; max-width: 620px; margin: 0 auto 52px">
+      <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; color: #005bbb">Meet the eboard</div>
+      <h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(38px, 4.4vw, 62px); line-height: .95; letter-spacing: -.045em; font-weight: 700; margin: 12px 0 16px">The people<br>behind RHA.</h2>
+      <p style="color: #667085; margin: 0">Your elected executive board — reach out any time about programming, funding, or getting involved.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 44px 40px">
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-1.jpg" alt="Kaiyi Wang" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Kaiyi Wang</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">VP of Finance</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-2.jpg" alt="Hannah Hidalgo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Hannah Hidalgo</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">Advisor</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-3.jpg" alt="Madison Nitsche" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Madison Nitsche</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">VP of Programming</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-7.jpg" alt="Kahliah Jacobs" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Kahliah Jacobs</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">VP of Communication</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-5.jpg" alt="Programming Chair" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Your Name</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">Programming Chair</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-6.jpg" alt="NCC" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Your Name</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">NCC</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center">
+        <div style="width: 200px; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #eaf2fb; margin-bottom: 18px"><img src="./web/eb-4.jpg" alt="President" style="width: 100%; height: 100%; object-fit: cover; object-position: center 26%; display: block"></div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0; color: #101827">Your Name</h3>
+        <p style="font-size: 13px; color: #667085; margin: 5px 0 8px">President</p>
+        <a href="mailto:you@example.com" style="font-size: 12.5px; color: #005bbb; font-weight: 600">you@example.com</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 64px">
+      <a href="#programming" style="display: inline-flex; align-items: center; gap: 10px; padding: 17px 30px; border-radius: 999px; background: #005bbb; color: #fff; font-weight: 600; font-size: 15px; transition: background .2s, transform .2s" style-hover="background: #002f56; color: #fff; transform: translateY(-2px)">Join your residence hall's council <span style="font-size: 18px">↗</span></a>
+      <p style="font-size: 13px; color: #667085; margin: 0">Every hall has open seats — no experience needed.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background: #0a1420; color: #fff; padding: 56px 0">
+  <div style="width: min(1180px, calc(100% - 48px)); margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; align-items: flex-end; flex-wrap: wrap">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -.03em; color: #fff; margin-bottom: 12px">
+        <span style="width: 38px; height: 38px; border-radius: 12px; background: #005bbb; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 15px">R</span>
+        <span>UB RHA</span>
+      </div>
+      <p style="color: rgba(255,255,255,.55); max-width: 430px; margin: 0">Residence Hall Association · University at Buffalo</p>
+    </div>
+    <a href="#top" style="font-weight: 600; color: #fff" style-hover="color: #ffc72c">Back to top ↑</a>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sheetUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://docs.google.com/spreadsheets/d/13ZScupE7DBhvCAo8PjZWgCyidDji3zrvM5W_KEvhVtg/edit?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Event calendar&quot;},&quot;pointsSheetUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://docs.google.com/spreadsheets/d/1--_ZL1fqjnyX0qJTZRd4qu8FxBCww2D1Vx_FhRq_UE4/edit?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;House points&quot;}}">
+class Component extends DCLogic {
+  state = { y: 0, heroFlipped: false, pointsRows: null, slide: 0, activeEvent: null, viewYear: new Date().getFullYear(), viewMonth: new Date().getMonth(), sheetEvents: null };
+  get eventList() { return this.state.sheetEvents && this.state.sheetEvents.length ? this.state.sheetEvents : this.events; }
+  parseCsv(text) {
+    const rows = []; let row = [], val = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"' && text[i + 1] === '"') { val += '"'; i++; }
+        else if (c === '"') q = false;
+        else val += c;
+      } else if (c === '"') q = true;
+      else if (c === ",") { row.push(val); val = ""; }
+      else if (c === "\n") { row.push(val); rows.push(row); row = []; val = ""; }
+      else if (c !== "\r") val += c;
+    }
+    row.push(val); if (row.some(v => v.trim() !== "")) rows.push(row);
+    return rows;
+  }
+  async loadPoints() {
+    const url = this.props.pointsSheetUrl;
+    if (!url) return;
+    const id = (url.match(/\/d\/([a-zA-Z0-9-_]+)/) || [])[1];
+    if (!id) return;
+    const gid = (url.match(/[#&?]gid=([0-9]+)/) || [])[1];
+    const src = "https://docs.google.com/spreadsheets/d/" + id + "/gviz/tq?tqx=out:csv" + (gid ? "&gid=" + gid : "");
+    try {
+      const res = await fetch(src);
+      if (!res.ok) return;
+      const rows = this.parseCsv(await res.text());
+      if (rows.length < 2) return;
+      const head = rows[0].map(h => h.trim().toLowerCase());
+      let iName = head.findIndex(h => h.includes("council") || h.includes("hall") || h.includes("name"));
+      let iPts = head.findIndex(h => h.includes("point") || h.includes("pts") || h.includes("score"));
+      let body = rows.slice(1);
+      if (iName < 0 || iPts < 0) { iName = 0; iPts = 1; body = rows; }
+      const totals = new Map();
+      body.forEach(r => {
+        const name = (r[iName] || "").trim();
+        const pts = parseFloat(String(r[iPts] || "").replace(/[^0-9.\-]/g, ""));
+        if (!name || isNaN(pts)) return;
+        totals.set(name, (totals.get(name) || 0) + pts);
+      });
+      const list = [...totals.entries()].map(([name, pts]) => ({ name, pts })).sort((a, b) => b.pts - a.pts);
+      if (list.length) this.setState({ pointsRows: list });
+    } catch (e) { /* keep fallback standings */ }
+  }
+  buildStandings() {
+    const sheet = this.state.pointsRows || [];
+    const norm = s => s.toLowerCase().replace(/[^a-z]/g, "").replace(/(.)\1+/g, "$1");
+    const near = (a, b) => {
+      if (Math.abs(a.length - b.length) > 1) return false;
+      const d = [];
+      for (let i = 0; i <= a.length; i++) { d[i] = [i]; for (let j = 1; j <= b.length; j++) d[i][j] = i === 0 ? j : Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)); }
+      return d[a.length][b.length] <= 1;
+    };
+    const claimed = new Set();
+    const rows = this.fallbackPoints.map(r => {
+      const k = norm(r.name);
+      let i = sheet.findIndex((s, n) => !claimed.has(n) && norm(s.name) === k);
+      if (i < 0) i = sheet.findIndex((s, n) => !claimed.has(n) && near(norm(s.name), k));
+      if (i > -1) claimed.add(i);
+      return { name: r.name, pts: i > -1 ? sheet[i].pts : 0 };
+    });
+    sheet.forEach((s, n) => { if (!claimed.has(n)) rows.push(s); });
+    rows.sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name));
+    const fmt = n => Math.round(n).toLocaleString();
+    const podiumStyles = [
+      { medalBg: "linear-gradient(145deg, #ffe6a3, #fff)", medalColor: "#a3720a", medalSize: "62px", medalFont: "26px", nameSize: "20px", nameWeight: 700, metaColor: "rgba(255,255,255,.85)", barH: "150px", barBg: "linear-gradient(180deg, #ffd863, #ffc72c)", barShadow: "0 -4px 20px rgba(255,199,44,.35)", barNumSize: "32px", barNumColor: "rgba(70,45,0,.6)", maxW: "190px", lift: "translateY(-10px)", z: 1, trophy: true, pad: "10px" },
+      { medalBg: "linear-gradient(145deg, #d8e6f7, #fff)", medalColor: "#005bbb", medalSize: "50px", medalFont: "19px", nameSize: "16px", nameWeight: 600, metaColor: "rgba(255,255,255,.7)", barH: "108px", barBg: "linear-gradient(180deg, #c3d6ea, #9fb9d6)", barShadow: "none", barNumSize: "28px", barNumColor: "rgba(0,30,60,.55)", maxW: "170px", lift: "translateY(-8px)", z: 0, trophy: false, pad: "10px" },
+      { medalBg: "linear-gradient(145deg, #e7d3bd, #fff)", medalColor: "#8a5a2b", medalSize: "50px", medalFont: "19px", nameSize: "16px", nameWeight: 600, metaColor: "rgba(255,255,255,.7)", barH: "78px", barBg: "linear-gradient(180deg, #d9bd9c, #c19c73)", barShadow: "none", barNumSize: "24px", barNumColor: "rgba(50,30,5,.55)", maxW: "170px", lift: "translateY(-8px)", z: 0, trophy: false, pad: "8px" }
+    ];
+    const top = rows.slice(0, 3);
+    const order = [1, 0, 2];
+    const podium = order.filter(i => top[i]).map(i => Object.assign({ rank: i + 1, name: top[i].name, pts: fmt(top[i].pts) + " pts" }, podiumStyles[i]));
+    const rest = rows.slice(3).map((r, i) => ({ rank: i + 4, name: r.name, pts: fmt(r.pts) + " pts" }));
+    return { podium, standings: rest };
+  }
+  imgUrl(raw) {
+    if (!raw) return "";
+    const u = raw.trim();
+    const drive = u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([a-zA-Z0-9-_]+)/);
+    if (drive) return "https://drive.google.com/thumbnail?id=" + drive[1] + "&sz=w1200";
+    return u;
+  }
+  async loadSheet() {
+    const url = this.props.sheetUrl;
+    if (!url) return;
+    const id = (url.match(/\/d\/([a-zA-Z0-9-_]+)/) || [])[1];
+    if (!id) return;
+    const gid = (url.match(/[#&?]gid=([0-9]+)/) || [])[1];
+    const src = "https://docs.google.com/spreadsheets/d/" + id + "/gviz/tq?tqx=out:csv" + (gid ? "&gid=" + gid : "");
+    try {
+      const res = await fetch(src);
+      if (!res.ok) return;
+      const rows = this.parseCsv(await res.text());
+      if (rows.length < 2) return;
+      const head = rows[0].map(h => h.trim().toLowerCase());
+      const col = (...names) => { for (const n of names) { const i = head.findIndex(h => h.includes(n)); if (i > -1) return i; } return -1; };
+      const iName = col("event name", "name", "event", "title");
+      const iCouncil = col("council", "host");
+      const iDate = col("date");
+      const iLoc = col("location", "where", "place");
+      const iTime = col("time");
+      const iNotes = col("note", "description", "details");
+      const iFlyer = col("flyer", "poster", "image", "photo", "graphic");
+      const out = [];
+      rows.slice(1).forEach((r, n) => {
+        const get = i => (i > -1 && r[i] ? r[i].trim() : "");
+        const title = get(iName); const raw = get(iDate);
+        if (!title || !raw) return;
+        let d = null;
+        const iso = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+        const us = raw.match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{2,4})/);
+        if (iso) d = new Date(+iso[1], +iso[2] - 1, +iso[3]);
+        else if (us) { let yr = +us[3]; if (yr < 100) yr += 2000; d = new Date(yr, +us[1] - 1, +us[2]); }
+        else { const p = new Date(raw); if (!isNaN(p)) d = p; }
+        if (!d || isNaN(d)) return;
+        const time = get(iTime), loc = get(iLoc), council = get(iCouncil);
+        const flyer = this.imgUrl(get(iFlyer));
+        out.push({
+          year: d.getFullYear(), month: d.getMonth(), day: d.getDate(),
+          slotId: "sheet-event-" + (n + 1),
+          title: title,
+          meta: [time, loc].filter(Boolean).join(" · "),
+          tag: council || "Event",
+          desc: get(iNotes) || (council ? "Hosted by " + council + "." : ""),
+          council: council,
+          time: time,
+          location: loc,
+          flyer: flyer
+        });
+      });
+      if (out.length) this.setState({ sheetEvents: out });
+    } catch (e) { /* keep fallback events */ }
+  }
+  fallbackPoints = [
+    { name: "South Lake", pts: 0 }, { name: "Governors", pts: 0 }, { name: "Wilkeson", pts: 0 },
+    { name: "Richmond", pts: 0 }, { name: "Spaulding", pts: 0 }, { name: "Evans", pts: 0 },
+    { name: "Fargo", pts: 0 }, { name: "Greiner", pts: 0 }, { name: "FLEEK", pts: 0 },
+    { name: "Clement", pts: 0 }, { name: "Goodyear", pts: 0 }, { name: "Red Jacket", pts: 0 },
+    { name: "Hadley", pts: 0 }, { name: "Flint", pts: 0 }
+  ];
+  events = [
+    { year: 2026, month: 8, day: 12, slotId: "event-flyer-1", title: "Welcome Back Social", meta: "7:00 PM · Ellicott Community Room", tag: "Social", desc: "Kick off the year with music, snacks, and lawn games. Free for all residents." },
+    { year: 2026, month: 8, day: 19, slotId: "event-flyer-2", title: "RHA Senate Meeting", meta: "6:30 PM · Student Union", tag: "Senate", desc: "Open to all residents \u2014 bring your hall's updates and questions." },
+    { year: 2026, month: 8, day: 27, slotId: "event-flyer-3", title: "Hall Spirit Night", meta: "8:00 PM · TBD", tag: "Spirit", desc: "Hall vs. hall spirit competitions. Wear your colors!" }
+  ];
+  monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  buildCalendar() {
+    const now = new Date();
+    const y = this.state.viewYear, m = this.state.viewMonth;
+    const first = new Date(y, m, 1);
+    const startOffset = (first.getDay() + 6) % 7; // Monday-first
+    const daysInMonth = new Date(y, m + 1, 0).getDate();
+    const monthEventsRaw = this.eventList.filter(e => e.year === y && e.month === m).sort((a, b) => a.day - b.day);
+    const byDay = {};
+    monthEventsRaw.forEach(e => { (byDay[e.day] = byDay[e.day] || []).push(e); });
+    const cells = [];
+    for (let i = 0; i < startOffset; i++) cells.push({ day: "", bg: "transparent", color: "transparent", weight: 400, dayRing: "2px solid transparent", chips: [] });
+    for (let d = 1; d <= daysInMonth; d++) {
+      const isToday = d === now.getDate() && m === now.getMonth() && y === now.getFullYear();
+      const dayEvents = byDay[d] || [];
+      cells.push({
+        day: d,
+        bg: dayEvents.length ? "#e6f0fb" : "transparent",
+        color: dayEvents.length ? "#002f56" : "#667085",
+        weight: dayEvents.length ? 700 : 400,
+        dayRing: isToday ? "2px solid #005bbb" : "2px solid transparent",
+        chips: dayEvents.map((e, i) => ({
+          label: e.council || e.tag,
+          bg: ["#005bbb", "#002f56", "#0a7bd8"][i % 3],
+          open: () => this.setState({ activeEvent: e })
+        }))
+      });
+    }
+    const monthEvents = monthEventsRaw.map((e, idx) => ({
+      day: e.day,
+      monLabel: this.monthNames[e.month].slice(0, 3).toUpperCase(),
+      title: e.title,
+      meta: e.meta,
+      tag: e.tag,
+      slotId: e.slotId,
+      flyer: e.flyer || "",
+      flyerBg: e.flyer ? 'url("' + e.flyer + '")' : "none",
+      noFlyer: !e.flyer,
+      cardBg: ["#dbeaff", "#eaf1fb", "#cfe4ff"][idx % 3],
+      dateLabel: this.monthNames[e.month].slice(0, 3) + " " + e.day,
+      open: () => this.setState({ activeEvent: e })
+    }));
+    const seasons = [
+      { sky: "linear-gradient(180deg, #8ec2f2, #d7ecfb)", sun: "#fff", glow: "rgba(255,255,255,.7)", hill: "#5fa0dd", emoji: "❄️" },
+      { sky: "linear-gradient(180deg, #8ec2f2, #d7ecfb)", sun: "#fff", glow: "rgba(255,255,255,.7)", hill: "#5fa0dd", emoji: "❄️" },
+      { sky: "linear-gradient(180deg, #7fe0ae, #d7f7e4)", sun: "#fff6c8", glow: "rgba(255,246,200,.7)", hill: "#3bc57d", emoji: "🌱" },
+      { sky: "linear-gradient(180deg, #9fd3ff, #ffe1f0)", sun: "#fff1a8", glow: "rgba(255,241,168,.7)", hill: "#5fc98a", emoji: "🌷" },
+      { sky: "linear-gradient(180deg, #ffb8e6, #fff0f8)", sun: "#ffe27a", glow: "rgba(255,226,122,.7)", hill: "#6fce8f", emoji: "🌸" },
+      { sky: "linear-gradient(180deg, #33aef0, #a6e6ff)", sun: "#ffdd3d", glow: "rgba(255,221,61,.75)", hill: "#0f8fd6", emoji: "☀️" },
+      { sky: "linear-gradient(180deg, #23a4ef, #94e0ff)", sun: "#ffd11f", glow: "rgba(255,209,31,.75)", hill: "#0b83c4", emoji: "🌊" },
+      { sky: "linear-gradient(180deg, #2fc4e8, #ffe98a)", sun: "#fff", glow: "rgba(255,255,255,.85)", hill: "#ffcf3d", emoji: "🏖️" },
+      { sky: "linear-gradient(180deg, #ffb14d, #ffe3a8)", sun: "#fff2c2", glow: "rgba(255,242,194,.7)", hill: "#ff9d3d", emoji: "🍂" },
+      { sky: "linear-gradient(180deg, #ff8a3d, #ffcf8a)", sun: "#ffe27a", glow: "rgba(255,226,122,.7)", hill: "#e8681f", emoji: "🎃" },
+      { sky: "linear-gradient(180deg, #c46fc9, #ffcfe6)", sun: "#ffcf8a", glow: "rgba(255,207,138,.7)", hill: "#a94db0", emoji: "🍁" },
+      { sky: "linear-gradient(180deg, #8ec2f2, #d7ecfb)", sun: "#fff", glow: "rgba(255,255,255,.7)", hill: "#5fa0dd", emoji: "❄️" }
+    ];
+    const s = seasons[m];
+    return { monthLabel: this.monthNames[m] + " " + y, calendarCells: cells, seasonSky: s.sky, sunColor: s.sun, sunGlow: s.glow, hillColor: s.hill, seasonEmoji: s.emoji, monthEvents, noEvents: monthEvents.length === 0 };
+  }
+  componentDidMount() {
+    this._onScroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = null;
+        this.setState({ y: window.scrollY || 0 });
+      });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+    this._timer = setInterval(() => this.setState(s => ({ slide: (s.slide + 1) % 4 })), 5000);
+    this._syncSlotIds();
+    this.loadSheet();
+    this.loadPoints();
+    this._sheetPoll = setInterval(() => { this.loadSheet(); this.loadPoints(); }, 300000);
+  }
+  componentDidUpdate() { this._syncSlotIds(); }
+  _syncSlotIds() {
+    document.querySelectorAll("image-slot[data-slot-id]").forEach(el => {
+      const want = el.getAttribute("data-slot-id");
+      if (want && el.id !== want) el.id = want;
+    });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    clearInterval(this._timer);
+    clearInterval(this._sheetPoll);
+  }
+  toggleHeroFlip = () => this.setState(s => ({ heroFlipped: !s.heroFlipped }));
+  renderVals() {
+    const y = this.state.y;
+    const t = (x, yy, r) => "translate3d(" + x.toFixed(1) + "px," + yy.toFixed(1) + "px,0) rotate(" + r.toFixed(2) + "deg)";
+    const i = this.state.slide;
+    const go = n => () => {
+      clearInterval(this._timer);
+      this._timer = setInterval(() => this.setState(s => ({ slide: (s.slide + 1) % 4 })), 5000);
+      this.setState({ slide: n });
+    };
+    return {
+      op0: i === 0 ? 1 : 0, op1: i === 1 ? 1 : 0, op2: i === 2 ? 1 : 0, op3: i === 3 ? 1 : 0,
+      dot0: i === 0 ? "#ffc72c" : "#c9d9ea",
+      dot1: i === 1 ? "#ffc72c" : "#c9d9ea",
+      dot2: i === 2 ? "#ffc72c" : "#c9d9ea",
+      dot3: i === 3 ? "#ffc72c" : "#c9d9ea",
+      go0: go(0), go1: go(1), go2: go(2), go3: go(3),
+      activeEvent: this.state.activeEvent,
+      activeFlyer: this.state.activeEvent && this.state.activeEvent.flyer ? this.state.activeEvent.flyer : "",
+      activeFlyerBg: this.state.activeEvent && this.state.activeEvent.flyer ? 'url("' + this.state.activeEvent.flyer + '")' : "none",
+      activeNoFlyer: !!this.state.activeEvent && !this.state.activeEvent.flyer,
+      closeEvent: () => this.setState({ activeEvent: null }),
+      stopClick: e => e.stopPropagation(),
+      prevMonth: () => this.setState(st => {
+        let m = st.viewMonth - 1, y = st.viewYear;
+        if (m < 0) { m = 11; y -= 1; }
+        return { viewMonth: m, viewYear: y };
+      }),
+      nextMonth: () => this.setState(st => {
+        let m = st.viewMonth + 1, y = st.viewYear;
+        if (m > 11) { m = 0; y += 1; }
+        return { viewMonth: m, viewYear: y };
+      }),
+      heroFlip: this.state.heroFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+      toggleHeroFlip: this.toggleHeroFlip,
+      ...this.buildStandings(),
+      ...this.buildCalendar(),
+      blobA: t(-y * 0.05, y * 0.16, y * 0.03),
+      blobB: t(y * 0.04, -y * 0.1, -y * 0.025),
+      ringA: "translate3d(0," + (y * 0.24).toFixed(1) + "px,0) scale(" + (1 + Math.min(y, 600) * 0.0004).toFixed(3) + ")",
+      squareA: t(y * 0.06, y * 0.12, y * 0.06)
+    };
+  }
+}
+</script>
+</body>
+</html>
