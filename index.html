@@ -584,7 +584,9 @@ class Component extends DCLogic {
       const iCouncil = col("council", "host");
       const iDate = col("date");
       const iLoc = col("location", "where", "place");
-      const iTime = col("time");
+      const iStart = col("start");
+      const iEnd = col("end");
+      const iTime = head.findIndex((h, i) => h.includes("time") && i !== iStart && i !== iEnd);
       const iNotes = col("note", "description", "details");
       const iFlyer = col("flyer", "poster", "image", "photo", "graphic");
       const out = [];
@@ -599,7 +601,10 @@ class Component extends DCLogic {
         else if (us) { let yr = +us[3]; if (yr < 100) yr += 2000; d = new Date(yr, +us[1] - 1, +us[2]); }
         else { const p = new Date(raw); if (!isNaN(p)) d = p; }
         if (!d || isNaN(d)) return;
-        const time = get(iTime), loc = get(iLoc), council = get(iCouncil);
+        const tf = s => s.replace(/(\d{1,2}:\d{2}):\d{2}/, "$1");
+        const st = tf(get(iStart)), en = tf(get(iEnd));
+        const time = st ? (en ? st + " – " + en : st) : get(iTime);
+        const loc = get(iLoc), council = get(iCouncil);
         const flyer = this.imgUrl(get(iFlyer));
         out.push({
           year: d.getFullYear(), month: d.getMonth(), day: d.getDate(),
